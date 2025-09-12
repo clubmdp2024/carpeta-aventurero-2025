@@ -1,0 +1,81 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #6BC6FF;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Canvas del fondo */
+#fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: -1;
+}
+
+/* Sección principal */
+.titulo-seccion {
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  color: #0072CE;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  text-shadow: 2px 2px 0px #FFD23B;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjetas con animación */
+.tarjeta {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+  border: 4px solid #0072CE;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.tarjeta h2 {
+  font-family: 'Baloo 2', cursive;
+  color: #5EBB41;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.tarjeta p, .tarjeta li {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.tarjeta:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0px 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Estado visible al aparecer */
+.tarjeta.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
