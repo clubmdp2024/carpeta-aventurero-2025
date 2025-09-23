@@ -1,23 +1,26 @@
-// Ejemplo: pausar el video con un click
-const video = document.getElementById('video-fondo');
-video.addEventListener('click', () => {
-  if (video.paused) {
-    video.play();
-  } else {
-    video.pause();
-  }
-});
-document.querySelectorAll('.timon').forEach(timon => {
-  timon.addEventListener('click', () => {
-    // Evita que se dispare varias veces
-    if (timon.classList.contains('girar')) return;
+// Crear overlay de transición
+const transitionOverlay = document.createElement("div");
+transitionOverlay.classList.add("page-transition");
+document.body.appendChild(transitionOverlay);
 
-    // Agregar animación de giro
-    timon.classList.add('girar');
+const timones = document.querySelectorAll(".timon");
 
-    // Esperar a que termine la animación y luego redirigir
+timones.forEach(timon => {
+  timon.addEventListener("click", () => {
+    const destino = timon.getAttribute("data-url");
+
+    // Animación de giro
+    timon.classList.add("girar");
+
+    // Animación de salida de la página actual
+    document.body.classList.add("page-exit");
+
+    // Flash + redirección
     setTimeout(() => {
-      window.location.href = timon.dataset.url;
-    }, 1000); // 1 segundo = mismo tiempo que el CSS
+      transitionOverlay.classList.add("active");
+      setTimeout(() => {
+        window.location.href = destino;
+      }, 1200); // duración del flash
+    }, 800); // duración de salida
   });
 });
