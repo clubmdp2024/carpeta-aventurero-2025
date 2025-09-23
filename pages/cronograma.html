@@ -4,51 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cronograma</title>
-    <link rel="stylesheet" href="style-cronograma.css" />
-  </head>
-  <body>
-    <div
-      style="
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000; /* fondo negro para resaltar el cronograma */
+      }
+
+      .iframe-container {
         position: relative;
         width: 100%;
-        height: 0;
-        padding-top: 70.7071%;
-        padding-bottom: 0;
-        box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
-        margin-top: 1.6em;
-        margin-bottom: 0.9em;
-        overflow: hidden;
-        border-radius: 8px;
-        will-change: transform;
-      "
-    >
+        height: 100%;
+      }
+
+      .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="iframe-container">
       <iframe
-        loading="lazy"
-        style="
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          border: none;
-          padding: 0;
-          margin: 0;
-        "
         src="https://www.canva.com/design/DAGx76Ce_pY/QZC4jP5hNKdu2d-Hul0X4A/view?embed"
         allowfullscreen="allowfullscreen"
-        allow="fullscreen"
-      >
-      </iframe>
+        loading="lazy"
+      ></iframe>
     </div>
-    <a
-      href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGx76Ce_pY&#x2F;QZC4jP5hNKdu2d-Hul0X4A&#x2F;view?utm_content=DAGx76Ce_pY&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
-      target="_blank"
-      rel="noopener"
-      >Documento A4 Calendario Mensual Enero 2025 Almanaque Imprimible
-      Minimalista Rosa</a
-    >
-    de yurledys puche mosquera
-
-    <script src="script-cronograma.js"></script>
   </body>
 </html>
