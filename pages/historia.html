@@ -1,20 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Video Especialidad | Club Mensajeros de Esperanza</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #6bc6ff, #ffd23b);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .video-card {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 25px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+        max-width: 900px;
+        width: 100%;
+        text-align: center;
+        animation: fadeIn 1s ease;
+      }
+
+      .video-card h1 {
+        font-family: "Fredoka One", cursive;
+        color: #0072ce;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 0px #ffd23b;
+      }
+
+      .video-card iframe {
+        width: 100%;
+        height: 500px;
+        border-radius: 20px;
+        border: 5px solid #5ebb41;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .video-card iframe:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Botón decorativo */
+      .btn {
+        margin-top: 1.5rem;
+        display: inline-block;
+        background: #0072ce;
+        color: #fff;
+        padding: 0.8rem 1.5rem;
+        border-radius: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      .btn:hover {
+        background: #005fa3;
+        transform: scale(1.05);
+      }
+    </style>
   </head>
   <body>
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/kbfVxHxlNjU?si=rvvKNxSJaiXihrxi"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    ></iframe>
+    <div class="video-card">
+      <h1>🎥 Historia del club</h1>
+      <iframe
+        src="https://www.youtube.com/embed/kbfVxHxlNjU?si=rvvKNxSJaiXihrxi"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <a
+        href="https://www.youtube.com/watch?v=kbfVxHxlNjU"
+        target="_blank"
+        class="btn"
+      >
+        🔗 Ver en YouTube
+      </a>
+    </div>
   </body>
 </html>
