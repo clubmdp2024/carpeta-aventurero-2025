@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia Mundial del Aventurero</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #6bc6ff, #ffd23b);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        color: #333;
+      }
+
+      h1 {
+        font-family: "Fredoka One", cursive;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #0072ce;
+        text-shadow: 2px 2px 0px #fff;
+        text-align: center;
+      }
+
+      .pdf-container {
+        width: 100%;
+        max-width: 900px;
+        height: 500px;
+        margin-bottom: 2rem;
+        border: 4px solid #0072ce;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .pdf-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .galeria {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .foto {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        border: 4px solid #5ebb41;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .foto:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .foto:hover img {
+        transform: scale(1.1);
+      }
+
+      .foto::after {
+        content: "⭐";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        opacity: 0.8;
+        transform: rotate(15deg);
+      }
+
+      /* Lightbox */
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PDF del certificado -->
+    <div class="pdf-container">
+      <iframe src="../media/Dia del Aventurero.pdf"></iframe>
+    </div>
+
+    <!-- Galería de fotos -->
+    <div class="galeria">
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG-20250517-WA0015.jpg"
+          alt="Foto 1"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG-20250517-WA0077.jpg"
+          alt="Foto 2"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_100755.jpg"
+          alt="Foto 3"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_104214.jpg"
+          alt="Foto 4"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_134619.jpg"
+          alt="Foto 5"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_153950.jpg"
+          alt="Foto 6"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_145628.jpg"
+          alt="Foto 6"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_161838.jpg"
+          alt="Foto 6"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_091627.jpg"
+          alt="Foto 6"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_152019.jpg"
+          alt="Foto 6"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_143734.jpg"
+          alt="Foto 6"
+        />
+      </div>
+      <div class="foto">
+        <img
+          src="../media/día mundial de aventurero/IMG_20250517_144419.jpg"
+          alt="Foto 6"
+        />
+      </div>
+      <!-- agrega más imágenes aquí -->
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <img id="lightboxImg" src="" alt="Imagen ampliada" />
+    </div>
+
+    <script>
+      const fotos = document.querySelectorAll(".foto img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const closeBtn = document.getElementById("closeBtn");
+
+      fotos.forEach((foto) => {
+        foto.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = foto.src;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target !== lightboxImg) {
+          lightbox.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
